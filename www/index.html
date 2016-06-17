@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>MultiCam App</title>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/iscroll-lite.js"></script>
+         
+        <script type="text/javascript" src="phonegap.js"></script>
+    </head>
+    <body onload="Init();">
+        <div id="FoMenu" style="display:block;">
+        	<img id="logo"  	src="img/logo.png">
+        	<div id="wifi"></div>
+        	<title id="Musor"></title>
+        	<div id="StreamLista">
+        	
+        	</div>
+        	
+        	<!-- <img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">  -->
+        	<div style="position:absolute;right:0;bottom:0;width:5%;height:5%;"  onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');"></div>
+        </div>
+        
+        <div id="Wifi" style="display:none;">
+        	<img id="logo"  src="img/logo.png">
+        	<div id="wifi2"></div>
+        	<p style="top:38%;">
+        		Az Ön készüléke nem csatlakozik a hálózathoz, a szerver nem elérhető.<br>
+        		Ellenőrizze a hálózati beállításait és próbálja meg újra!
+        	</p>
+        	<div id="wifi_gomb" ontouchstart="server_update()">Újra</div>
+        	<div style="position:absolute;right:0;bottom:0;width:5%;height:5%;"  onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');"></div>
+        </div>
+        
+        
+        <div id="Stream" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('video_stream').pause();">
+        	<h1>Élő adás</h1>
+        	<film id="stream"></film>
+			<div id="stream_nev"></div>
+			<div id="stream_musor"></div>
+        </div>
+        		
+        
+        
+        <div id="LOG" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('LOG').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<div id="LOGS">
+        		<div id="logs" class="wrapper">
+        		
+        		</div>
+        	</div>
+        </div>
+        
+        
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
