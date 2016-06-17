@@ -28,7 +28,6 @@ function Init()
 	if (InitOk) { return; }
 	dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
 	console.log("device = "+dev);
-	//console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
 	
 	if (dev) 
